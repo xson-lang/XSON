@@ -1,0 +1,1 @@
+Licensed under CC-BY-SA-4.0. See the [license file](https://github.com/xson-lang/XSON/blob/main/LICENSE.txt) for details.
