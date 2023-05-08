@@ -1,0 +1,69 @@
+name: Sync Docs and Wiki
+
+on:
+  push:
+    paths:
+      - "docs/**"
+  repository_dispatch:
+    types: [docs]
+  gollum:
+
+jobs:
+  docs-to-wiki:
+    name: Publish Docs to Wiki
+    runs-on: ubuntu-latest
+    if: github.event_name != 'gollum'
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Get Commit Author
+        id: get-author
+        run: echo "AUTHOR=$(git log -1 --format="%an")" >> $GITHUB_OUTPUT
+      - name: Get Commit Email
+        id: get-email
+        run: echo "EMAIL=$(git log -1 --format="%ae")" >> $GITHUB_OUTPUT
+      - name: Get Commit Message
+        id: get-message
+        run: echo "MESSAGE=$(git log -1 --format="%s")" >> $GITHUB_OUTPUT
+      - name: Push to Wiki
+        uses: newrelic/wiki-sync-action@main
+        with:
+          source: docs
+          destination: wiki
+          token: ${{ secrets.WIKI_SYNC_TOKEN }}
+          gitAuthorName: ${{ steps.get-author.outputs.AUTHOR }}
+          gitAuthorEmail: ${{ steps.get-email.outputs.EMAIL }}
+          commitMessage: ${{ steps.get-message.outputs.MESSAGE }}
+  
+  wiki-to-docs:
+    name: Update Docs from Wiki
+    runs-on: ubuntu-latest
+    if: github.event_name == 'gollum'
+    steps:
+      - name: Checkout wiki 
+        uses: actions/checkout@v3
+        with:
+          repository: 'xson-lang/XSON.wiki'
+      - name: Get Wiki Commit Author
+        id: get-author
+        run: echo "AUTHOR=$(git log -1 --format="%an")" >> $GITHUB_OUTPUT
+      - name: Get Wiki Commit Email
+        id: get-email
+        run: echo "EMAIL=$(git log -1 --format="%ae")" >> $GITHUB_OUTPUT
+      - name: Get Wiki Commit Message
+        id: get-message
+        run: echo "MESSAGE=$(git log -1 --format="%s")" >> $GITHUB_OUTPUT
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.WIKI_SYNC_TOKEN }} # allows us to push back to repo
+      - name: Sync Wiki to Docs
+        uses: newrelic/wiki-sync-action@main
+        with:
+          source: wiki
+          destination: docs
+          token: ${{ secrets.WIKI_SYNC_TOKEN }}
+          gitAuthorName: ${{ steps.get-author.outputs.AUTHOR }}
+          gitAuthorEmail: ${{ steps.get-email.outputs.EMAIL }}
+          commitMessage: ${{ steps.get-message.outputs.MESSAGE }}
+          branch: main
