@@ -7,14 +7,16 @@
 
 <a href="XSON-Standardized-Libraries-List#C++17">C++17</a>
 
-<!--<a href="">C/C++</a>
+<a href="XSON-Standardized-Libraries-List#CC++">C/C++</a>
 
-<a href="">C#</a>
+<a href="XSON-Standardized-Libraries-List#C#">C#</a>
 
-<a href="">Python</a>
+<a href="XSON-Standardized-Libraries-List#Python">Python</a>
 
-<a href="">Java</a>-->
+<a href="XSON-Standardized-Libraries-List#Java">Java</a>
+
 </details>
+
 
 <details><summary><h1>Extensions</h1></summary>
 <!--
@@ -26,22 +28,21 @@
 
 
 <details><summary><h1>Extension Sets</h1></summary>
-<!--
-<a href="">qol</a><br>
-<a href="">qol-1.1</a>
 
-<a href="">json</a>
+[//]: # (<a href="">qol</a><br>)
+[//]: # (<a href="">qol-1.1</a>)
 
-<a href="">yaml</a>
+[//]: # (<a href="">json</a>)
 
-<a href="">toml</a>
--->
+[//]: # (<a href="">yaml</a>)
+
+[//]: # (<a href="">toml</a>)
 </details>
 
 
 
-# Contribute
-[Commit Message Format](Commit-Messages)
+
+# [Contribute](Contribution-Guidelines)
 
 ### Creating an XSON Library
 [XSON Standard Compliance](XSON-Standard-Compliance)
