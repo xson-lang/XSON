@@ -5,15 +5,16 @@
 
 <details><summary><h1><a href="XSON-Standardized-Libraries-List">XSON Libraries</a></h1></summary>
 
-<a href="XSON-Standardized-Libraries-List#C++17">C++17</a>
-
 <a href="XSON-Standardized-Libraries-List#CC++">C/C++</a>
 
 <a href="XSON-Standardized-Libraries-List#C#">C#</a>
 
+<a href="XSON-Standardized-Libraries-List#Java">Java</a>
+
 <a href="XSON-Standardized-Libraries-List#Python">Python</a>
 
-<a href="XSON-Standardized-Libraries-List#Java">Java</a>
+<a href="XSON-Standardized-Libraries-List#Rust">Rust</a>
+
 
 </details>
 
@@ -44,10 +45,6 @@
 
 # [Contribute](Contribution-Guidelines)
 
-### Creating an XSON Library
-[XSON Standard Compliance](XSON-Standard-Compliance)
-
-### Creating an extension
 [XSON Extension Document Template](XSON-Extension-Document-Template)
 
 [XSON Extension Set Document Template](XSON-Extension-Set-Document-Template)

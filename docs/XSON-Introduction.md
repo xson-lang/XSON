@@ -33,16 +33,4 @@ servers: {
 - `/grammar`: TextMate grammar files for XSON
 
 ## Contributing
-Thanks for consdering contributing to XSON! All contributions are appreciated!
-
->*If you would like to contribute to the base spec before it is fully released, feel free to open an [issue](issues) or [discussion](discussions) after refering to the [Contribution Guidelines]()*
-
-If you think you could **improve any of the documentation** in some way, open a [pull request]() using the proper template.
-
-If you would like to **create a parser and/or generator for XSON** (i.e. a library), or get your parser/generator listed under the [XSON Libraries]() list, refer to the [XSON Library Guidelines]()
-
-To **request a feature/extension**, raise an [issue](issues) for it, following the correct issue guidelines/template.
-
-If you want to actually **create an extension** for XSON, refer to the [Extension Guidelines]() and open a [Pull Request]() using the correct guildelines/template.
-
-If you would like to **donate** to the XSON project, you can [donate through GitHub]()
+Please refer to the [contribution guidelines]() for any type of contribution, including documentation, donations, extensions or extension sets, and parsers/generators.
