@@ -5,9 +5,9 @@
 
 <details><summary><h1><a href="XSON-Standardized-Libraries-List">XSON Libraries</a></h1></summary>
 
-<a href="XSON-Standardized-Libraries-List#CC++">C/C++</a>
+<a href="XSON-Standardized-Libraries-List#CC">C/C++</a>
 
-<a href="XSON-Standardized-Libraries-List#C#">C#</a>
+<a href="XSON-Standardized-Libraries-List#C">C#</a>
 
 <a href="XSON-Standardized-Libraries-List#Java">Java</a>
 
