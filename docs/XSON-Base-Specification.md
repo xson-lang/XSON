@@ -106,6 +106,15 @@ my array: [
 ]
 ```
 A comma after the last value is *not* allowed by default, as seen in the above example.
+Any other rules for keys and values still apply to arrays and their values.
+
+***Except***, unlike with key-value pairs, array values are typically referenced using their index within the array:
+```cs
+get<string>(0); //returns 'value one'
+get<string>(1); //returns 'value two'
+get<string>(2); //returns 'value three'
+get<string>(3); //index out of bounds
+```
 
 ## Objects
 Objects in XSON are simply a collection of more key/value pairs, enclosed by curly braces `{}`:
