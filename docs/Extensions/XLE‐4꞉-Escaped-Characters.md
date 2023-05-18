@@ -43,7 +43,7 @@ C\: Drive Alias : F
 
 </td></tr></table>
 
-If, for example, we wanted to use [XLE-7 (Quoted Strings)](XLE%u20107%uA789-Quoted-Strings) but still wanted to have literal double quotes,
+If, for example, we wanted to use [XLE-7 (Quoted Strings)](XLE%E2%80%907%EA%9E%89-Quoted-Strings) but still wanted to have literal double quotes,
 we would now need to escape the double quote characters that are intended to be literal:
 
 <table><tr><th>

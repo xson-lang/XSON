@@ -1,4 +1,4 @@
-**Purpose:** Extra Functionality; JSON Compatibility
+**Purpose:** Extra Functionality; JSON Compatibility; TOML Compatibility
 
 **Description:** 
 Any unamed value (i.e objects and arrays), not just strings, can also be part of an array collection.

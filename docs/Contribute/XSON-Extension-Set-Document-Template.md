@@ -5,7 +5,7 @@
 >
 > The header of this template below is meant to be used as the file name. It includes the special dash mentioned above.
 
-# Extenstion set `<set name>[‐<version>]`
+# Extension Set `<set name>[‐<version>]`
 
 
 
@@ -17,7 +17,7 @@
 
 **Extension List:**
 
-XLE-<ID\>: <Title1\> <br>
-XLE-<ID\>: <Title2\> <br>
-[XLE-<ID\>: <Title3\> <br>]
+[XLE-<ID\>: <Title1\>]() <br>
+[XLE-<ID\>: <Title2\>]() <br>
+[[XLE-<ID\>: <Title3\>]() <br>]
 ...
