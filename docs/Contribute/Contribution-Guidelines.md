@@ -29,6 +29,10 @@ Fix contribute header in wiki sidebar
 >*If you would like to contribute or suggest changes to the XSON base spec before it is fully released, 
 feel free to open an [issue](../issues) with the correct template*
 
+Do not make any changes to the wiki or its git directly. 
+Instead, make your changes in the `docs` folder.
+These are the wiki files and any changes in this folder are automatically published to the wiki on push.
+
 ## Documentation
 
 If you think you could **improve any of the documentation** in some way:
