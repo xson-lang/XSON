@@ -2,7 +2,7 @@ Welcome to the XSON wiki! This wiki contains all the information you need to beg
 
 # Getting Started
 
-For a quick rundown on how to use XSON and its syntax, check out the [Introduction](XSON-Introduction) 
+For a quick rundown on how to use XSON and its syntax, check out the [Introduction](README) 
 and the [Base Specification](XSON-Base-Specification) of XSON.
 
 # Develop

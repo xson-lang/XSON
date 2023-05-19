@@ -1,5 +1,5 @@
 # Overview
-[XSON Introduction](XSON-Introduction)
+[XSON Introduction](README)
 
 [Base Specification](XSON-Base-Specification)
 
