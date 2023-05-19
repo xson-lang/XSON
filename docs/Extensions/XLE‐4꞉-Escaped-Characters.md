@@ -7,7 +7,7 @@ Functionally, the backslash is ignored and the next character is always interpre
 
 In the base specification for example, the first colon character can be escaped to be part of the key instead of as the separator.
 
-Escaping is particularly useful in combination with extensions that give certain characters special behvaior. 
+Escaping is particularly useful in combination with extensions that give certain characters special behavior. 
 Escaping such characters allows using them literally while still using their special functionality as part of an extension elsewhere.
 
 **Created On**: May 15th, 2023

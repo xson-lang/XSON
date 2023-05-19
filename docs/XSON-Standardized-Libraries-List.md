@@ -11,9 +11,9 @@ XSON standard-compliant libraries are those which follow a certain set of rules,
 - Be able to read any given file as an XSON file or XSON schema file regardless of the file extension.
 - Be able to properly read and write with ANSI, UTF-8, UTF-16, and UTF-32 file encodings.
 - Log or notify the user when an extension that is marked as deprecated is used (see the status field of [extensions](XSON-Extension-Document-Template))
-- Not start the name of your library with XSON (regardless of captialization), as that naming convention is reserved for [reference implementations](#Reference-Implementations) (e.g. you cannot use XSON-Cpp or XsonRuby).
+- Not start the name of your library with XSON (regardless of capitalization), as that naming convention is reserved for [reference implementations](#Reference-Implementations) (e.g. you cannot use XSON-Cpp or XsonRuby).
 
-***All libraries in the below list are standard compliant***. The above rules are garaunteed to be true for any library in this list, so developers can rely on consistent behavior. 
+***All libraries in the below list are standard compliant***. The above rules are guaranteed to be true for any library in this list, so developers can rely on consistent behavior. 
 
 Library developers who follow this standard can request to their libraries put on this list by opening an [issue](../issues) on github with the appropriate issue template. This of course means that said libraries need to be open source so they can be inspected for compliance. See the [Contribution Guidelines](Contribution-Guidelines) for more information.
 
@@ -21,7 +21,7 @@ Library developers who follow this standard can request to their libraries put o
 Reference implementations are XSON libraries that are created by the XSON developer(s) themselves. 
 They are usually the first XSON library created for a programming language.
 
-They are discerened by their names starting with "xson" (e.g. XsonCpp) regardless of capitalization.
+They are discerned by their names starting with "xson" (e.g. XsonCpp) regardless of capitalization.
 They have the advantage of having advanced features and are very likely to support all current extensions and the newest extension sets.
 
 They are also intended to be used as a reference for library developers to create their own library off of, 

@@ -11,9 +11,9 @@ To be able to read and write XSON files in your project, you can check out the [
 list for a list of standardized parsers and/or generators.
 
 To create your own library, refer to the [XSON Library Standardization](XSON-Standardized-Libraries-List#XSON-Library-Standardization) 
-rules on guildelines on rules to follow when creating a library. 
+rules on guidelines on rules to follow when creating a library. 
 It also contains some general guidelines for those looking to develop a library.
 
 # Contribute
 
-Any type of contribution (including documentation, extensions or extension sets, libraries, or donations) should follow the [Contribution Guildelines](Contribution-Guidelines), which also contains information on how to make said contributions.
+Any type of contribution (including documentation, extensions or extension sets, libraries, or donations) should follow the [Contribution Guidelines](Contribution-Guidelines), which also contains information on how to make said contributions.

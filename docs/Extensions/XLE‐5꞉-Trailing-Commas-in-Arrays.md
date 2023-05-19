@@ -4,12 +4,12 @@
 A comma character can be placed after the last element/item of an array. 
 Functionally, the comma before the closing square bracket is simply ignored.
 
-This has the main advtange of easing copy-pasting the same list item multiple times,
+This has the main advantage of easing copy-pasting the same list item multiple times,
 thus making editing lists easier, since modifying the last item in an array or list is no longer required.
 
 These trailing commas also reduce [diffs](https://en.wikipedia.org/wiki/Diff) when a new item is added to the list.
 
-Additonally, copy-pasting basic lists with trailing commas on all lines requires no modification to the lsit.
+Additionally, copy-pasting basic lists with trailing commas on all lines requires no modification to the list.
 
 
 **Created On**: May 15th, 2023

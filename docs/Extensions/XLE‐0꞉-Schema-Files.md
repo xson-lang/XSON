@@ -1,6 +1,6 @@
 > This is a unique and special extension that simply defines XSON schema, so it does not need to and cannot be enabled like other extensions. 
 > 
-> Hence, this definition of schema files is given an extension ID of 0 as they are not part of the base specifcation but indeed is built-in functionality
+> Hence, this definition of schema files is given an extension ID of 0 as they are not part of the base specification but indeed is built-in functionality
 
 **Purpose:** Convenience; Extra Functionality
 

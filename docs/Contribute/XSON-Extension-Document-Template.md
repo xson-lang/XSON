@@ -20,7 +20,7 @@ Extra Functionality
 
 **Created On**: <date\>
 
-**Status:** { Active | Deprecated by [XLE-<ID\>](link_to_supersceding_extension)}
+**Status:** { Active | Deprecated by [XLE-<ID\>](link_to_superseding_extension)}
 
 **Examples:** 
 <Clear example(s) of XSON files with and without this extension enabled (i.e. a before an after)>

@@ -6,7 +6,7 @@ Thanks for considering contributing to XSON! All contributions are appreciated!
 All commits to the main XSON repo or its wiki must have messages, and said messages must follow these guidelines:
 
 - The first line should give a very brief description. This first line is required.
-- Any extra or detailed information is optional but should be in a seperate paragraph.
+- Any extra or detailed information is optional but should be in a separate paragraph.
 - They must start with a first person singular present tense verb (e.g. Add, Update, Reorganize, Change).
 
 **Examples:**
@@ -58,7 +58,7 @@ Similarly, to **create an extension set**:
      2) Increment the set version in this duplicate
      3) Change the extensions of the set to your liking, 
         but keep in mind the [extension set rules](XSON-Base-Specification#Extension-Sets);
-        Mainly, you cannot remove exisitng functionality from an extension set
+        Mainly, you cannot remove existing functionality from an extension set
    - If not, add an extension set document under `docs/extension sets/`, 
      following the [extension set template](XSON-Extension-Set-Document-Template)
 3) Make a [pull request](../pulls) with the correct PR template, using your fork with your changes against the main XSON repo

@@ -4,7 +4,7 @@
 The equals character (`=`) can also be used universally to separate the key and value. 
 However, mixing and matching the default character, colon (`:`), with an extension character (such as equals) is not recommended due to readability issues.
 
-When enabled, this extension will cause the key and value to be seperated based on the first `=` character, or the first `:` if there is no `=`.
+When enabled, this extension will cause the key and value to be separated based on the first `=` character, or the first `:` if there is no `=`.
 
 **Created On**: May 15th, 2023
 
