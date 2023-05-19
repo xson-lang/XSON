@@ -1,0 +1,8 @@
+# Ignore files or directories that case-insensitively have `LICENSE` somewhere in their path
+(?:(?i)LICENSE)
+# Ignore the action's configuration data
+^\.github\/actions\/spelling\/
+# Ignore all GitHub workflow files
+^\.github\/workflows\/
+# Ignore Git Attributes
+\.gitattributes

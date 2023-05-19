@@ -1,0 +1,8 @@
+# Auto eol for the repo
+* text=auto
+
+# Make the check spelling folder LF
+/.github/actions/spelling/** text eol=lf
+
+# Apply linguist override to all files in the directory
+*.md linguist-detectable
