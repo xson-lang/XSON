@@ -1,7 +1,7 @@
 ---
 name: Extension Set Request
 about: Suggest an extension set for XSON
-title: "[New Extension Set] <name>"
+title: "[Extension Set] <name>"
 labels: discussion, extension set
 assignees: Arastais
 
@@ -19,8 +19,8 @@ assignees: Arastais
 
 
 **Describe alternatives you've considered**
-<!-- A clear and concise description of any alternative solutions or features you've considered. You can omit this part if you wish. -->
+<!-- A clear and concise description of any alternative solutions or features you've considered. This part can be omitted and the title can be removed if it's not applicable -->
 
 
 **Additional context**
-<!-- Add any other context or screenshots about the extension set request here. -->
+<!-- Add any other context or screenshots about the extension set request here. Remove the title if not applicable -->

@@ -20,8 +20,8 @@ assignees: Arastais
 
 
 **Describe alternatives you've considered**
-<!-- A clear and concise description of any alternative solutions or features you've considered. You can omit this part if you wish.-->
+<!-- A clear and concise description of any alternative solutions or features you've considered. This part can be omitted and the title can be removed if it's not applicable -->
 
 
 **Additional context**
-<!-- Add any other context or screenshots about the proposed changes here.-->
+<!-- Add any other optional context about the suggested changes here. Remove the title if not applicable. -->

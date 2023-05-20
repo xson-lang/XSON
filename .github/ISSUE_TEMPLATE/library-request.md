@@ -19,4 +19,4 @@ assignees: Arastais
 **Source Code Link**: <!-- A link to the library's repository -->
 
 **Additional context**
-<!-- Add any other optional context about the library here. -->
+<!-- Add any other optional context about the library here. Remove the title if not applicable -->
