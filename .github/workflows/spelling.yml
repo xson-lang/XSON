@@ -51,6 +51,7 @@ on:
   issue_comment:
     types:
     - 'created'
+  workflow_dispatch:
 
 jobs:
   spelling:
@@ -63,7 +64,7 @@ jobs:
     outputs:
       followup: ${{ steps.spelling.outputs.followup }}
     runs-on: ubuntu-latest
-    if: "contains(github.event_name, 'pull_request') || github.event_name == 'push'"
+    if: "contains(github.event_name, 'pull_request') || github.event_name == 'push' || github.event_name == 'workflow_dispatch'"
     concurrency:
       group: spelling-${{ github.event.pull_request.number || github.ref }}
       # note: If you use only_check_changed_files, you do not want cancel-in-progress
@@ -77,13 +78,14 @@ jobs:
         experimental_apply_changes_via_bot: 1
         # Report actions below already post a comment
         post_comment: 0
-        only_check_changed_files: 1
+        only_check_changed_files: ${{github.event_name != 'workflow_dispatch'}}
         extra_dictionaries:
           cspell:cpp/src/cpp.txt
           cspell:cpp/src/ecosystem.txt
           cspell:software-terms/src/software-terms.txt
           cspell:filetypes/filetypes.txt
         extra_dictionary_limit: 10
+        event_aliases: '{"workflow_dispatch":"push"}'
         suppress_push_for_open_pull_request: 1
         check_file_names: 0
         unknown_word_limit: 100
