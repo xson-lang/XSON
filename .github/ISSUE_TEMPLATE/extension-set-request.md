@@ -3,7 +3,7 @@ name: Extension Set Request
 about: Suggest an extension set for XSON
 title: "[Extension Set] <name>"
 labels: discussion, extension set
-assignees: Arastais
+assignees: ''
 
 ---
 

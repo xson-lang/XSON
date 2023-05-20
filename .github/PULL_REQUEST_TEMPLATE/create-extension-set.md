@@ -1,7 +1,7 @@
 ---
 name: Create an Extension Set
 about: Add an extension set to XSON
-title: "[Extension Set] <description>"
+title: "[Extension Set] name"
 labels: extension set
 assignees: Arastais
 

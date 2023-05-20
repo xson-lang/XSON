@@ -2,7 +2,7 @@
 name: Documentation Issue
 about: Point out issues in the overall XSON documentation
 title: "[Docs] <description>"
-labels: documentation, discussion
+labels: discussion, documentation
 assignees: Arastais
 
 ---
@@ -12,7 +12,7 @@ assignees: Arastais
 
 
 **Describe your motivation**
-<!-- Explain why you think what you're pointing oout is a problem. -->
+<!-- Explain why you think what you're pointing out is a problem. -->
 
 
 **Describe what you expect**

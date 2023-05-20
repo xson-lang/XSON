@@ -1,9 +1,9 @@
 ---
 name: Extension Request
 about: Suggest an extension for XSON
-title: "[New Extension] <description>"
+title: "[Extension] <description>"
 labels: discussion, extension
-assignees: Arastais
+assignees: ''
 
 ---
 
