@@ -31,6 +31,7 @@
 [XLE-7: Quoted Strings](XLE%E2%80%907%EA%9E%89-Quoted-Strings)<br>
 [XLE-8: Root-Level Object or Array](XLE%E2%80%908%EA%9E%89-Root%E2%80%90Level-Object-or-Array)<br>
 [XLE-9: Headers for Objects](XLE%E2%80%909%EA%9E%89-Headers-for-Objects)<br>
+[XLE-10: Alternate Comment Characters](XLE%E2%80%9010%EA%9E%89-Alternate-Comment-Characters)<br>
 
 </details>
 
@@ -40,13 +41,13 @@
 [//]: # (<a href="">qol</a><br>)
 [//]: # (<a href="">qol-1.1</a>)
 
+[ini](Extension-Set-`ini`)
+
 [json](Extension-Set-`json`)
 
-[//]: # (<a href="">yaml</a>)
-
-[//]: # (<a href="">ini</a>)
-
 [toml](Extension-Set-`toml`)
+
+[//]: # (<a href="">yaml</a>)
 </details>
 
 
