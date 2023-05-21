@@ -7,65 +7,105 @@ on:
   repository_dispatch:
     types: [docs]
   gollum:
+  
+env:
+    docs: $GITHUB_WORKSPACE/main/docs
+    wiki: $GITHUB_WORKSPACE/wiki
+    #suffix: [github-actions-bot]
 
 jobs:
-  docs-to-wiki:
-    name: Publish Docs to Wiki
+  check-diff:
+    name: Check for changes
     runs-on: ubuntu-latest
-    if: github.event_name != 'gollum'
+    if: github.sender.login != 'github-actions[bot]'
+    outputs: 
+        DIFF: ${{ steps.diff-check.outputs.DIFF }}
     steps:
-      - name: Checkout Repo
+      - name: Print Sender (For Logging Purposes)
+        run: echo "${{ github.event.sender.login }}"
+      - name: Checkout Main Repo
         uses: actions/checkout@v3
+        with:
+          path: main
+      - name: Checkout Wiki Repo
+        uses: actions/checkout@v3
+        with:
+          path: wiki
+          repository: ${{github.repository}}.wiki
+      - name: Check for Differences
+        id: diff-check
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "DIFF<<$EOF" >> "$GITHUB_OUTPUT"
+          # The echo is here to put a newline so that github doesn't complain about a missing newline
+          diff -qr --exclude=.git "${{env.docs}}" "${{env.wiki}}" >> "$GITHUB_OUTPUT" && echo "" >> "$GITHUB_OUTPUT"
+          echo "$EOF" >> "$GITHUB_OUTPUT"
+      - name: Print Output
+        run: echo "${{steps.diff-check.outputs.DIFF}}"
+        
+  sync:
+    name: Sync Docs with Wiki
+    runs-on: ubuntu-latest
+    needs: check-diff
+    permissions:
+      contents: write
+    if: needs.check-diff.outputs.DIFF != ''
+    steps:
+      - name: Checkout Main Repo
+        uses: actions/checkout@v3
+        with:
+          path: main
+          #token: ${{env.token}}
+      - name: Checkout Wiki Repo
+        uses: actions/checkout@v3
+        with:
+          path: wiki
+          repository: ${{github.repository}}.wiki
+          #token: ${{env.token}}
+        # Go to source folder
+      - name: Set Wiki as Source Folder
+        if: github.event_name == 'gollum'
+        run: |
+          echo "SRC=${{env.wiki}}" >> $GITHUB_ENV
+          echo "DST=${{env.docs}}" >> $GITHUB_ENV
+      - name: Set Docs as Source Folder
+        if: github.event_name != 'gollum'
+        run: |
+          echo "SRC=${{env.docs}}" >> $GITHUB_ENV
+          echo "DST=${{env.wiki}}" >> $GITHUB_ENV
       - name: Get Commit Author
         id: get-author
+        working-directory: ${{env.SRC}}
         run: echo "AUTHOR=$(git log -1 --format="%an")" >> $GITHUB_OUTPUT
       - name: Get Commit Email
         id: get-email
+        working-directory: ${{env.SRC}}
         run: echo "EMAIL=$(git log -1 --format="%ae")" >> $GITHUB_OUTPUT
+      - name: Print Commit Message
+        working-directory: ${{env.SRC}}
+        run: echo "$(git log -1 --format="%B")"
       - name: Get Commit Message
         id: get-message
-        run: echo "MESSAGE=$(git log -1 --format="%s")" >> $GITHUB_OUTPUT
-      - name: Push to Wiki
-        uses: newrelic/wiki-sync-action@main
-        with:
-          source: docs
-          destination: wiki
-          token: ${{ secrets.WIKI_SYNC_TOKEN }}
-          gitAuthorName: ${{ steps.get-author.outputs.AUTHOR }}
-          gitAuthorEmail: ${{ steps.get-email.outputs.EMAIL }}
-          commitMessage: ${{ steps.get-message.outputs.MESSAGE }}
-  
-  wiki-to-docs:
-    name: Update Docs from Wiki
-    runs-on: ubuntu-latest
-    if: github.event_name == 'gollum'
-    steps:
-      - name: Checkout wiki 
-        uses: actions/checkout@v3
-        with:
-          repository: 'xson-lang/XSON.wiki'
-      - name: Print Actor
-        run: echo "${{ github.actor }} ${{ github.triggering_actor }}"
-      - name: Get Wiki Commit Author
-        id: get-author
-        run: echo "AUTHOR=$(git log -1 --format="%an")" >> $GITHUB_OUTPUT
-      - name: Get Wiki Commit Email
-        id: get-email
-        run: echo "EMAIL=$(git log -1 --format="%ae")" >> $GITHUB_OUTPUT
-      - name: Get Wiki Commit Message
-        id: get-message
-        run: echo "MESSAGE=$(git log -1 --format="%s")" >> $GITHUB_OUTPUT
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.WIKI_SYNC_TOKEN }} # allows us to push back to repo
-      - name: Sync Wiki to Docs
-        uses: newrelic/wiki-sync-action@main
-        with:
-          source: wiki
-          destination: docs
-          token: ${{ secrets.WIKI_SYNC_TOKEN }}
-          gitAuthorName: ${{ steps.get-author.outputs.AUTHOR }}
-          gitAuthorEmail: ${{ steps.get-email.outputs.EMAIL }}
-          commitMessage: ${{ steps.get-message.outputs.MESSAGE }}
-          branch: main
+        working-directory: ${{env.SRC}}
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "MESSAGE<<$EOF" >> "$GITHUB_OUTPUT"
+          git log -1 --format="%B" >> "$GITHUB_OUTPUT"
+          echo "$EOF" >> "$GITHUB_OUTPUT"
+      - name: Copy Source Files to Destination
+        run: |
+          rsync -avzr --delete --exclude='.git/' "${{env.SRC}}/" "${{env.DST}}/"
+      - name: Push
+        working-directory: ${{env.DST}}
+        run: |
+          export GIT_AUTHOR_NAME="github-actions[bot]"
+          export GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="${{ steps.get-author.outputs.AUTHOR }}"
+          export GIT_COMMITTER_EMAIL="${{ steps.get-email.outputs.EMAIL }}"
+          #export GIT_AUTHOR_NAME="${{ steps.get-author.outputs.AUTHOR }}"
+          #export GIT_AUTHOR_EMAIL="${{ steps.get-email.outputs.EMAIL }}"
+          #export GIT_COMMITTER_NAME="github-actions[bot]"
+          #export GIT_COMMITTER_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "${{ steps.get-message.outputs.MESSAGE }}"
+          git push
