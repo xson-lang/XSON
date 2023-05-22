@@ -26,7 +26,6 @@ servers: {
   }
 }
 ```
-<!-- TEST -->
 
 ## Repo Folder Structure
 - `/docs`: All documentation for XSON, including the wiki, readme, base spec, and all implementation details

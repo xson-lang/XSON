@@ -92,6 +92,22 @@ jobs:
           echo "MESSAGE<<$EOF" >> "$GITHUB_OUTPUT"
           git log -1 --format="%B" >> "$GITHUB_OUTPUT"
           echo "$EOF" >> "$GITHUB_OUTPUT"
+      - name: Get Source Commit Subject
+        id: get-src-sub
+        working-directory: ${{env.SRC}}
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "SUB<<$EOF" >> "$GITHUB_OUTPUT"
+          git log -1 --format="%s" >> "$GITHUB_OUTPUT"
+          echo "$EOF" >> "$GITHUB_OUTPUT"
+      - name: Get Destination Commit Subject
+        id: get-dst-sub
+        working-directory: ${{env.DST}}
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "SUB<<$EOF" >> "$GITHUB_OUTPUT"
+          git log -1 --format="%s" >> "$GITHUB_OUTPUT"
+          echo "$EOF" >> "$GITHUB_OUTPUT"
       - name: Copy Source Files to Destination
         run: |
           rsync -avzr --delete --exclude='.git/' "${{env.SRC}}/" "${{env.DST}}/"
@@ -107,5 +123,10 @@ jobs:
           #export GIT_COMMITTER_NAME="github-actions[bot]"
           #export GIT_COMMITTER_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "${{ steps.get-message.outputs.MESSAGE }}"
-          git push
+          if [ "${{ steps.get-src-sub.outputs.SUB }}" = ${{ steps.get-dst-sub.outputs.SUB }}]; then
+            git commit --amend --no-edit
+            git push --force-with-lease
+          else
+            git commit -m "${{ steps.get-message.outputs.MESSAGE }}"
+            git push
+          fi
