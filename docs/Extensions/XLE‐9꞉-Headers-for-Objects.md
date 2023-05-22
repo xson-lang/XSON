@@ -43,7 +43,7 @@ servers: {
 
 </td><td>
 
-```toml 
+```yaml 
 [servers]
 alpha:   [10.0.0.2, My Home Server]
 bravo:   [10.0.0.7, My Work Server]
@@ -60,7 +60,7 @@ start time: 14:03:59:10
 <br/>
 Example Result (same for both):
 
-```cs
+```java
 get<string>("servers") => "
   alpha:  [10.0.0.2, My Home Server]
   bravo:  [10.0.0.7, My Work Server]

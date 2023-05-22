@@ -51,7 +51,7 @@ flags = [
 
 </td><td>
 
-```json
+```yaml
 flags: [
     True,
     True,
@@ -77,7 +77,7 @@ flags: [
 
 </td><td>
 
-```json 
+```yaml 
 flags: [
     True,
     True,
@@ -109,7 +109,7 @@ The resulting array is the same regardless:
 get<bool[]>("flags") = { 
     True,
     True,
-    (etc...)
+    (etc..)
     False,
     False
 }

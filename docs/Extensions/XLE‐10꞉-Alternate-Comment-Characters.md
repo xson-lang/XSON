@@ -28,7 +28,7 @@ They are direct alternatives for the default double slash (`//`) comment charact
 
 </td><td>
 
-```cpp 
+```yaml 
 /* This is a
  * multi-line comment
  */

@@ -19,9 +19,9 @@ Note that they are only ignored if they are the beginning and end of a key or va
 
 ```yaml
 servers: {
-  alpha:  [10.0.0.2, My Home Server]
-  bravo:  [10.0.0.7, My Work Server]
-  charlie:[10.0.0.9, My Friend's Server]
+  alpha:   [10.0.0.2, My Home Server]
+  bravo:   [10.0.0.7, My Work Server]
+  charlie: [10.0.0.9, My Friend's Server]
   aux: {
     os        :  Ubuntu
     //Note the double quotes added here
@@ -33,7 +33,7 @@ servers: {
 
 </td><td>
 
-```toml 
+```yaml 
 "servers": {
   "alpha":   ["10.0.0.2", "My Home Server"]
   "bravo":   ["10.0.0.7", "My Work Server"]

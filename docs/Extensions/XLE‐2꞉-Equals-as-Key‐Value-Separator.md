@@ -33,7 +33,7 @@ servers: {
 
 </td><td>
 
-```ini 
+```yaml 
 servers={
   alpha   = [10.0.0.2, My Home Server]
   bravo   = [10.0.0.7, My Work Server]

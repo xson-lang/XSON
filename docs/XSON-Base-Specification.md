@@ -53,7 +53,14 @@ Key1: value 2
 `key1` and `Key1` are actually identified as the same key and would be identified as duplicates, and thus would produce a parsing error.
 <br/>
 
-The name of the key is used to find/get its respective value, e.g.:
+The name of the key is used to find/get its respective value.
+<br/>
+Given this XSON data:
+```java
+key: value
+my key: my value
+```
+The values can be accessed using the key name:
 ```cs
 get<string>("key"); //returns 'value' as a string variable (without the quotes)
 get<string>("my key"); //returns 'my value' as a string variable (without the quotes)
@@ -85,7 +92,7 @@ A **value** can be either an [Array](#Arrays), an [Object](#Objects), or (much l
 ## Type Interpretation
 There are no types (and thus no syntax typing) in XSON files. The data type of each string value is determined by the client using its parser. A parser can interpret values as essentially any type, as specified by the client; You are only limited by which parser you use (and thus the programming language of the parser you are using). Consider this example:
 ```java
-my magic number: 7
+my magic number: 10
 ```
 This key/value pair can be interpreted as any type (that is valid within the programming language) by a parser, i.e. in C#:
 ```cs
@@ -108,12 +115,13 @@ my array: [
 A comma after the last value is *not* allowed by default, as seen in the above example.
 Any other rules for keys and values still apply to arrays and their values.
 
-***Except***, unlike with key-value pairs, array values are typically referenced using their index within the array:
+***Except***, unlike with key-value pairs, arrays (that are interpreted as such) are referenced using their index within the array:
 ```cs
-get<string>(0); //returns 'value one'
-get<string>(1); //returns 'value two'
-get<string>(2); //returns 'value three'
-get<string>(3); //index out of bounds
+get<string[]>("my array").get<string>(0) //returns 'value one'
+get<string[]>("my array")[0]; //returns 'value one' as a string
+get<string[]>("my array")[1]; //returns 'value two' as a string
+get<string[]>("my array")[2]; //returns 'value three' as a string
+get<string[]>("my array")[3]; //index out of bounds
 ```
 
 ## Objects

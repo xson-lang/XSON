@@ -34,14 +34,14 @@ servers: {
 
 ```yaml 
 servers: [
-  [10.0.0.2, My Home Server]
-  [10.0.0.7, My Work Server]
-  [10.0.0.9, My Friend's Server]
+  [10.0.0.2, My Home Server],
+  [10.0.0.7, My Work Server],
+  [10.0.0.9, My Friend's Server],
   {
     os        :  Ubuntu
     version   :  22.04 LTS
     start time:  14:03:59:10
-  ]
+  }
 ]
 ```
 
@@ -57,7 +57,7 @@ Referencing Example:
 
 </tr><tr><td>
 
-```cs
+```cpp
 get<string>("servers") => "
   alpha:  [10.0.0.2, My Home Server]
   bravo:  [10.0.0.7, My Work Server]
@@ -89,6 +89,7 @@ get<string>("servers") => {
   }"
 }
 
+get<string[]>("servers")[0] => "[10.0.0.2, My Home Server]"
 get<string[]>("servers").get<string>(0) => "[10.0.0.2, My Home Server]"
 get<string[]>("servers").get<string[]>(0) => { "10.0.0.2", "My Home Server" }
 

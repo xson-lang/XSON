@@ -18,9 +18,9 @@ Functionally, an outer object is simply ignored, and an outer array is treated a
 
 ```yaml
 servers: {
-  alpha:  [10.0.0.2, My Home Server]
-  bravo:  [10.0.0.7, My Work Server]
-  charlie:[10.0.0.9, My Friend's Server]
+  alpha:   [10.0.0.2, My Home Server]
+  bravo:   [10.0.0.7, My Work Server]
+  charlie: [10.0.0.9, My Friend's Server]
   aux: {
     os        :  Ubuntu
     version   :  22.04 LTS
@@ -34,9 +34,9 @@ servers: {
 ```yaml
 {
   servers: {
-    alpha:  [10.0.0.2, My Home Server]
-    bravo:  [10.0.0.7, My Work Server]
-    charlie:[10.0.0.9, My Friend's Server]
+    alpha:   [10.0.0.2, My Home Server]
+    bravo:   [10.0.0.7, My Work Server]
+    charlie: [10.0.0.9, My Friend's Server]
     aux: {
       os        :  Ubuntu
       version   :  22.04 LTS
@@ -55,9 +55,9 @@ servers: {
   // Remember that array values cannot have names 
   // (see XLE-3 for the relevant extension)
   {
-    alpha:  [10.0.0.2, My Home Server]
-    bravo:  [10.0.0.7, My Work Server]
-    charlie:[10.0.0.9, My Friend's Server]
+    alpha:   [10.0.0.2, My Home Server]
+    bravo:   [10.0.0.7, My Work Server]
+    charlie: [10.0.0.9, My Friend's Server]
     aux: {
       os        :  Ubuntu
       version   :  22.04 LTS
@@ -92,7 +92,7 @@ get<TimeSpan>("servers.aux.start time") => { 14 Days, 3 Hours, 59 Minutes, and 1
 
 The root-level array however, is accessed differently:
 ```cs
-get<string[]>("").get<string>(0) => "
+get<string[]>("")[0] => "
   alpha:  [10.0.0.2, My Home Server]
   bravo:  [10.0.0.7, My Work Server]
   charlie:[10.0.0.9, My Friend's Server]
@@ -103,8 +103,9 @@ get<string[]>("").get<string>(0) => "
   }
 "
 
-get<string[]>("").get<string>(0).get<string>("alpha") => "[10.0.0.2, My Home Server]"
-get<string[]>("").get<string>(0).get<string[]>("alpha") => { "10.0.0.2", "My Home Server" }
+get<string[]>("")[0].get<string>("alpha") => "[10.0.0.2, My Home Server]"
+get<string[]>("")[0].get<string[]>("alpha") => { "10.0.0.2", "My Home Server" }
 
-get<string[]>("").get<string>(0).get<TimeSpan>("aux.start time") => { 14 Days, 3 Hours, 59 Minutes, and 10 Seconds }
+get<string[]>("")[0].get<TimeSpan>("aux.start time") => { 14 Days, 3 Hours, 59 Minutes, and 10 Seconds }
 ```
+This array is considered unnamed and thus you cannot have another unnamed array at the root level.

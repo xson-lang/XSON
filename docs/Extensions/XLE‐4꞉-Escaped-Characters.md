@@ -43,28 +43,10 @@ C\: Drive Alias : F
 
 </td></tr></table>
 
-If, for example, we wanted to use [XLE-7 (Quoted Strings)](XLE%E2%80%907%EA%9E%89-Quoted-Strings) but still wanted to have literal double quotes,
-we would now need to escape the double quote characters that are intended to be literal:
-
-<table><tr><th>
-XLE-4 and XLE-7
-</th></tr><tr><td>
-
-```cpp
-#ext 4,7
-
-OS              : "Windows 7 Ultimate 64-bit"
-//In this example, we actually want quotes in the value, 
-//but still want the surrounding quotes
-Path            : "\"C:\\Program Files (x86)\\My Program\""
-C\: Drive Alias : "F"
-```
-</td></tr></table>
-
 <br/>
 
 In the original, the result is not what we intend, since there's no way to interpret the first colon in the last line literally:
-```cs
+```java
 get<string>("OS") => Windows 7 Ultimate 64-bit
 get<string>("Path") => "C:\Program Files (x86)\My Program"
 
@@ -73,7 +55,7 @@ get<string>("C: Drive Alias") => { null }
 ```
 
 With escaping however, the result is correct:
-```cs
+```java
 get<string>("OS") => Windows 7 Ultimate 64-bit
 get<string>("Path") => "C:\Program Files (x86)\My Program"
 
