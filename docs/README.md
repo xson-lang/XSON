@@ -7,6 +7,8 @@ XSON is built with two core principles:
 
 See the [wiki](https://github.com/xson-lang/XSON/wiki) for more details, including the base spec and extensions.
 
+For a list of **XSON libraries**, check out the [XSON standardized library list](https://github.com/xson-lang/XSON/wiki/XSON-Standardized-Libraries-List#list-of-libraries)
+
 ## Example
 Here is a simple example of an xson file (with no extensions enabled):
 ```java
