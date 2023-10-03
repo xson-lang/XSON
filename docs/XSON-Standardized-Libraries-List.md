@@ -24,7 +24,7 @@ They are usually the first XSON library created for a programming language.
 They are discerned by their names starting with "xson" (e.g. XsonCpp) regardless of capitalization.
 They have the advantage of having advanced features and are very likely to support all current extensions and the newest extension sets.
 
-They are also intended to be used as a reference for library developers to create their own library off of, 
+They are also intended to be used as a reference for other library developers to create their own library off of, 
 since all reference implementations are open source and under a copy-left license.
 
 # List of Libraries
@@ -33,27 +33,27 @@ since all reference implementations are open source and under a copy-left licens
 Libraries whose names are *italicized* are [reference implementations](#Reference-Implementations).
 
 ### C/C++
-| Name                                              | Langauge Version      | License    | # of Extensions Supported | Author(s)                               | Notes   |
-| -----------                                       | --------------------- | ---------- | ------------------------- | --------------------------------------- | ------- |
-| [*XsonCpp*](https://github.com/xson-lang/XsonCpp) | C++17                 | GNU LGPLv3 | All<sup>1</sup>           | [Arastais](https://github.com/Arastais) |         |
-| *XsonC*                                           | C99/C++               | GNU LGPLv3 | All<sup>1</sup>           | [Arastais](https://github.com/Arastais) | Planned |
+| Name                                              | Langauge Version      | License                                                              | # of Extensions Supported | Author(s)                               | Notes   |
+| ------------------------------------------------- | --------------------- | -------------------------------------------------------------------- | ------------------------- | --------------------------------------- | ------- |
+| [*XsonCpp*](https://github.com/xson-lang/XsonCpp) | C++17                 | [MPL 2.0](https://github.com/xson-lang/XsonCpp/blob/main/LICENSE.md) | All (0-9)                 | [Arastais](https://github.com/Arastais) |         |
+| *XsonC*                                           | C/C++                 | N/A                                                                  | N/A                       | [Arastais](https://github.com/Arastais) | Planned |
 
 ### C#
 | Name     | Langauge Version      | License    | # of Extensions Supported | Author(s)                               | Notes   |
 | -------- | --------------------- | ---------- | ------------------------- | --------------------------------------- | ------- |
-| *XsonCS* | C# 8.0                | GNU LGPLv3 | N/A                       | [Arastais](https://github.com/Arastais) | Planned | 
+| *XsonCS* | C# 8.0                | N/A        | N/A                       | [Arastais](https://github.com/Arastais) | Planned | 
 
 ### Java
 | Name        | Langauge Version      | License    | # of Extensions Supported | Author(s)                               | Notes   |
 | ----------- | --------------------- | ---------- | ------------------------- | --------------------------------------- | ------- |
-| *XsonJava*  | Java 21 LTS           | GNU LGPLv3 | N/A                       | [Arastais](https://github.com/Arastais) | Planned | 
+| *XsonJava*  | Java 21 LTS           | N/A        | N/A                       | [Arastais](https://github.com/Arastais) | Planned | 
 
 ### Python
 | Name        | Langauge Version      | License    | # of Extensions Supported | Author(s)                               | Notes   |
 | ----------- | --------------------- | ---------- | ------------------------- | --------------------------------------- | ------- |
-| *XsonPy*    | Python 3.11           | GNU LGPLv3 | N/A                       | [Arastais](https://github.com/Arastais) | Planned | 
+| *XsonPy*    | Python 3.11           | N/A        | N/A                       | [Arastais](https://github.com/Arastais) | Planned | 
 
 ### Rust
 | Name        | Langauge Version      | License    | # of Extensions Supported | Author(s)                               | Notes   |
 | ----------- | --------------------- | ---------- | ------------------------- | --------------------------------------- | ------- |
-| *XsonRust*  | N/A                   | GNU LGPLv3 | N/A                       | [Arastais](https://github.com/Arastais) | Planned |
+| *XsonRust*  | N/A                   | N/A        | N/A                       | [Arastais](https://github.com/Arastais) | Planned |
