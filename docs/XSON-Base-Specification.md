@@ -112,7 +112,14 @@ my array: [
   value three
 ]
 ```
-A comma after the last value is *not* allowed by default, as seen in the above example.
+An optional trailing comma (i.e. a comma after the last value) is allowed. Functionally, this comma changes nothing when parsing, but is still allowed for git compatiblity and convenience.
+```java
+my array: [
+  value one,
+  value two,
+  value three, //trailing comma is allowed
+]
+```
 Any other rules for keys and values still apply to arrays and their values.
 
 ***Except***, unlike with key-value pairs, arrays (that are interpreted as such) are referenced using their index within the array:
@@ -175,7 +182,7 @@ Any extra whitespace around directives is ignored, much like with strings. [Comm
 In this example, these two directives are equivalent:
 ```cpp
 #example 1,3
-#example   1,   3  //This directive has extra space
+#example   1,   3  //This directive's extra space is ignored
 ```
 
 ## Extensions
