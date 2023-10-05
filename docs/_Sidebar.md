@@ -26,12 +26,11 @@
 [XLE-2: Equals as Key-Value Separator](XLE%E2%80%902%EA%9E%89-Equals-as-Key%E2%80%90Value-Separator)<br>
 [XLE-3: All Value Types in Arrays](XLE%E2%80%903%EA%9E%89-All-Value-Types-in-Arrays)</a><br>
 [XLE-4: Escaped Characters](XLE%E2%80%904%EA%9E%89-Escaped-Characters)<br>
-[XLE-5: Trailing Commas in Arrays](XLE%E2%80%905%EA%9E%89-Trailing-Commas-in-Arrays)<br>
-[XLE-6: Trailing Commas in Lines](XLE%E2%80%906%EA%9E%89-Trailing-Commas-in-Lines)<br>
-[XLE-7: Quoted Strings](XLE%E2%80%907%EA%9E%89-Quoted-Strings)<br>
-[XLE-8: Root-Level Object or Array](XLE%E2%80%908%EA%9E%89-Root%E2%80%90Level-Object-or-Array)<br>
-[XLE-9: Headers for Objects](XLE%E2%80%909%EA%9E%89-Headers-for-Objects)<br>
-[XLE-10: Alternate Comment Characters](XLE%E2%80%9010%EA%9E%89-Alternate-Comment-Characters)<br>
+[XLE-5: Commas After Values](XLE%E2%80%905%EA%9E%89-Commas-After-Values)<br>
+[XLE-6: Quoted Strings](XLE%E2%80%906%EA%9E%89-Quoted-Strings)<br>
+[XLE-7: Root-Level Object or Array](XLE%E2%80%907%EA%9E%89-Root%E2%80%90Level-Object-or-Array)<br>
+[XLE-8: Headers for Objects](XLE%E2%80%908%EA%9E%89-Headers-for-Objects)<br>
+[XLE-9: Alternate Comment Characters](XLE%E2%80%909%EA%9E%89-Alternate-Comment-Characters)<br>
 
 </details>
 
