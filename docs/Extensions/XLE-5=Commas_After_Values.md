@@ -20,7 +20,7 @@ In addition to JSON compatiblity, this extension can be used for convenience pur
 The below example demonstrates how, for example, a C++ enum can be seamlessly copied into an XSON object; 
 The enum contents are unchanged.
 
-Note that in this specific example, [XLE-2 (Equals as Key-Value Separator)](XLE%u20102%uA789-Equals-as-Key%u2010Value-Separator)
+Note that in this specific example, [XLE-2 (${XLE-2_NAME})](${XLE-2_LINK})
 is needed due to C++'s syntax.
 <table><tr>
 
